@@ -1520,7 +1520,7 @@ def create_confirm_session(
 
     @bindings.add(Keys.Enter)
     def newline(event: E) -> None:
-        session.default_buffer.text = ""
+        session.default_buffer.text = "y" if default else "n"
         event.app.exit(result=default)
 
     @bindings.add(Keys.Any)
